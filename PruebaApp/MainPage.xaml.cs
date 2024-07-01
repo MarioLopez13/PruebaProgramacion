@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Net.Http;
+using System.IO;
+using System.Threading.Tasks;
 using SQLite;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
+using Microsoft.Maui.Controls;   
 
 namespace PruebaApp
 {
@@ -33,7 +37,7 @@ namespace PruebaApp
             var code = "ML" + random.Next(1000, 2000);
             var newJoke = new Joke { JokeText = jokeText, Code = code };
 
-            await _database.InsertAsync(NewJoke);
+            await _database.InsertAsync(newJoke);
             _jokes.Add(newJoke);
         }
 
@@ -47,8 +51,17 @@ namespace PruebaApp
             }
         }
     }
-       
-   }
+    public class Joke
+    {
+        public int ID { get; set; }
+        public string JokeText { get; set; }
+        public string Code { get; set; }
+    }
+    public class JokeResponse
+    {
+        public string Value { get; set; }
+    }
+}
 
     
 
