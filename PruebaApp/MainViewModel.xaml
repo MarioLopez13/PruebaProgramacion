@@ -7,10 +7,16 @@
     <ContentPage.BindingContext>
         <local:MainViewModel />
     </ContentPage.BindingContext>
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+    <StackLayout Padding="10">
+        <Button Text="Get New Joke" Clicked="OnGetJokeClicked"/>
+        <ListView ItemsSource="{Binding Jokes}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Jokes}">
+                        
+                    </TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>
