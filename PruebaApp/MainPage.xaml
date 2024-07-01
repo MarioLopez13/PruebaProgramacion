@@ -9,7 +9,7 @@
             <ListView x:Name="JokeListView">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding Joke}" Detail="{Binding Code}"
+                        <TextCell Text="{Binding Joke}" Detail="{Binding Code}"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
